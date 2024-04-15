@@ -115,54 +115,75 @@ a {
     color: #00239f; }
 
 
-  /* 반응형 레이아웃을 위한 CSS */
-       /* 반응형 레이아웃을 위한 공통 CSS */
-       .container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* 좌측 정렬 */
-        width: 100%;
-        max-width: 800px;
-        margin-left: -2%;
-    }
+/* 반응형 레이아웃을 위한 CSS */
+.container {
+display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 좌측 정렬 */
+    width: 100%;
+    max-width: 800px;
+    margin-left: -2%;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.text-box {
+    flex: 1;
+    /* border: 1px solid #ccc; */
+    padding-right: 20px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+.image-box {
+  flex: 1;
+  /* border: 1px solid #ccc; */
+  padding-right: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.project-img {
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0; /* 이미지의 외부 여백 제거 */
+    padding: 0; /* 이미지의 내부 여백 제거 */
+}
+p {
+    margin: 0;
+}
+
+/* 플젝 소개 css  */
+.container {
+  background-color: #f2f2f2; /* Light gray background */
+  margin-bottom: 20px; /* Add a little margin at the bottom */
+  padding: 15px; /* Optional: Add padding to space out the content */
+  border-radius: 10px;
+}
+
+/* 인트로 관련 css */
+
+.dynamic-space{
+  margin-left: 100px;
+}
+/* 모바일 화면에 대한 추가 CSS */
+@media (max-width: 768px) {
     .content {
-        display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: center;
-        width: 100%;
     }
-    .text-box {
-        flex: 1;
-        /* border: 1px solid #ccc; */
-        padding-right: 20px;
-        box-sizing: border-box;
-        word-wrap: break-word;
+    .text-box .image-box{
+      width: 100%;
     }
-    .image-box {
-      flex: 1;
-      /* border: 1px solid #ccc; */
-      padding-right: 20px;
-      box-sizing: border-box;
-      overflow: hidden;
-  }
-    .project-img {
-        max-width: 100%;
-        min-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0; /* 이미지의 외부 여백 제거 */
-        padding: 0; /* 이미지의 내부 여백 제거 */
+    .dynamic-space{
+      margin-left: -2px;
     }
-    p {
-        margin: 0;
+    .text-box h4{
+      margin-top: 30px;
     }
-    /* 모바일 화면에 대한 추가 CSS */
-    @media (max-width: 768px) {
-        .content {
-            flex-direction: column;
-            align-items: center;
-        }
-        .text-box .image-box{
-          width: 100%;
-        }
-    }
+}
+
+
